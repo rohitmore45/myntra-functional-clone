@@ -10,9 +10,16 @@ function onLoad() {
 }
 
 function addToBag(itemId) {
-    bagItems.push(itemId);
-    localStorage.setItem('bagItems', JSON.stringify(bagItems));
-    displayBagIcon();
+    if (bagItems.includes(itemId)) {
+        alert('Item is already in cart!!')
+    } else {
+        bagItems.push(itemId);
+        localStorage.setItem('bagItems', JSON.stringify(bagItems));
+        displayBagIcon();
+        alert('Item added')
+        // console.log(bagItems)
+    }
+
 }
 
 function displayBagIcon() {
